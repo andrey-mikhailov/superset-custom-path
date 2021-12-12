@@ -1,0 +1,17 @@
+# reference
+# - https://github.com/amancevice/docker-superset/blob/master/examples/postgres/docker-compose.yml
+
+version: '3'
+services:
+  superset:
+    build: ./superset
+    volumes:
+      - ./superset_config.py:/app/pythonpath/superset_config.py
+      # - ./superset.db1:/app/superset_home/superset.db
+
+  nginx:
+    build: ./nginx
+    ports:  
+      - "8080:80"
+    depends_on:
+      - superset

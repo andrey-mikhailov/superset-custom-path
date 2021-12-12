@@ -13,9 +13,6 @@ RUN apt-get update -y && \
     pip install --no-cache-dir psycopg2==2.8.6 redis==3.5.3 \
     pip install --no-cache-dir clickhouse-driver==0.2.2 clickhouse-sqlalchemy==0.1.6
 
-
-RUN PYTHONPATH="/app/pythonpath:/app/valamis"
-
 ENV PYTHONPATH "${PYTHONPATH}:/app/valamis"
 
 
